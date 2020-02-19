@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DocumentService {
 
-  url = 'http://localhost:4000'
+  url = 'http://localhost:4000';
 
   constructor(private http: HttpClient) { }
 
@@ -20,8 +20,8 @@ export class DocumentService {
 
   addDocument(name, size) {
     const document = {
-      name: name,
-      size: size
+      name,
+      size
     };
     return this.http.post(`${this.url}/documents/add`, document);
   }

@@ -16,14 +16,14 @@ app.use(bodyParser.json());
 //     extended: true
 //   })
 
-mongoose.connect('mongodb://localhost:27017/documents', );
+mongoose.connect('mongodb://localhost:27017/documents');
 // { useNewUrlParser: true }
 
 const connection = mongoose.connection;
 
 // only listen once when db opens
 connection.once('open', () => {
-    console.log('MongoDB connected successfully')
+    console.log('MongoDB connected successfully');
 });
 
 router.route('/documents').get((req, res) => {
@@ -56,7 +56,7 @@ router.route('/documents/add').post((req, res) => {
 });
 
 router.route('/documents/delete/:id').delete((req, res) => {
-    Document.findByIdAndDelete({_id: req.params.id}, (err, issue) => {
+    Document.findByIdAndDelete({_id: req.params.id}, (err, document) => {
         if (err)
             res.json(err);
         else

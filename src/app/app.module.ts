@@ -11,7 +11,7 @@ import { CreateComponent } from './components/create/create.component';
 import { DocumentService } from './document.service';
 
 const routes: Routes = [
-  {path: 'create', component: CreateComponent },
+  { path: 'create', component: CreateComponent },
   { path: 'list', component: ListComponent },
   { path: '', redirectTo: 'list', pathMatch: 'full' }
 ];

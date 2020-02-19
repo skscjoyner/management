@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { Document } from '../../document.model';
-import {DocumentService } from '../../document.service';
+import { DocumentService } from '../../document.service';
 
 @Component({
   selector: 'app-list',
