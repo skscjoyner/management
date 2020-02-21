@@ -9,10 +9,11 @@ import { AppComponent } from './app.component';
 import { ListComponent } from './components/list/list.component';
 import { CreateComponent } from './components/create/create.component';
 import { DocumentService } from './document.service';
+import { UploadComponent } from './components/upload/upload.component';
 
 const routes: Routes = [
   { path: 'create', component: CreateComponent },
-  { path: 'list', component: ListComponent },
+  { path: 'list', component: UploadComponent },
   { path: '', redirectTo: 'list', pathMatch: 'full' }
 ];
 
@@ -20,7 +21,8 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     ListComponent,
-    CreateComponent
+    CreateComponent,
+    UploadComponent
   ],
   imports: [
     BrowserModule,
