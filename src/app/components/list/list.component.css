@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 960px;
+    margin-top: 100px;;
+}
+
+li {
+    list-style-type: none;
+    border: 1px solid black;
+    width: 175px;
+    padding: 30px;
+}
+
+.delete {
+    display: flex;
+    float: right;
+}
+
+.doc-info {
+    padding-top: 25px;
+}
+
+.bars {
+    padding-top: 50px;
+}
+
+button {
+    background: lightblue;
+}
+
+.add-load {
+    display: flex;
+    align-items: stretch;
+}

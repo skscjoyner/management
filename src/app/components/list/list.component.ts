@@ -13,7 +13,6 @@ export class ListComponent implements OnInit {
 
   documents: Document[];
 
-
   constructor(
     private documentService: DocumentService,
     private router: Router
@@ -27,14 +26,15 @@ export class ListComponent implements OnInit {
     this.documentService
       .getDocuments()
       .subscribe((data: Document[]) => {
-      this.documents = data;
-      console.log('Data requested...');
-      console.log(this.documents);
+        this.documents = data;
+        console.log('Data requested...');
+        console.log(this.documents);
     });
   }
 
   deleteDocument(id) {
-    this.documentService.deleteDocument(id).subscribe(() => {
+    this.documentService.deleteDocument(id)
+    .subscribe(() => {
       this.fetchDocuments();
     });
   }

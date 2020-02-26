@@ -1,11 +1,77 @@
-<p>list works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-6">
+                    <app-search></app-search>
+                </div>
+                <div class="col-md-6">
+                    <!-- <p>{{ }} </p> Upload Component info -->
+                </div>
+            </div>
+        <div class="row">
+            <div class="col-md">
+                <div *ngFor="let document of documents">
+                    <ul>
+                        <li class="doc-info">
+                            {{ document.name }} 
+                            <br>
+                            {{ document.size }}
+                            <button class="delete" id="delete" (click)="deleteDocument(document._id)">Delete</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
 
-<!-- <div>
-    <ul *ngFor="let document of documents">
+
+<!-- <div *ngFor="let document of documents">
+    <ul>
         <li class="doc-info">
             {{ document.name }} 
+            <br>
             {{ document.size }}
             <button class="delete" id="delete" (click)="deleteDocument(document._id)">Delete</button>
         </li>
     </ul>
 </div> -->
+
+<!-- <hr>
+
+<div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-sm-6">
+          </div>
+          <div class="col-md-6">
+            <app-upload></app-upload>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md">
+            <span class="docsInfo">
+              {{ totalDocs }} document(s)
+            </span>
+            <span>
+                Total size: {{ totalDocSize }}
+            </span>
+          </div>
+        </div>
+        <div class="row">
+          <div *ngFor="let document of documents">
+            <ul class="doc-info">
+                <li>
+                    {{ document.name }}
+                    <br>
+                    {{ document.size }}
+                    <button class="delete" id="delete" (click)="deleteDocument()">Delete</button>
+                </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div> -->

@@ -1,5 +1,5 @@
 export interface Document {
-    id: String,
-    name: String,
-    size: Number
+    id: string;
+    name: string;
+    size: number;
 }

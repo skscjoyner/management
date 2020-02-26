@@ -8,6 +8,12 @@ import Document from './models/document';
 const app = express();
 const router = express.Router();
 
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
+
 // middleware
 app.use(cors());
 app.use(bodyParser.json());
@@ -55,8 +61,24 @@ router.route('/documents/add').post((req, res) => {
         });
 });
 
+// router.route('/documents/update/:id').post((req, res) => {
+//     Document.findByIdAndUpdate(req.params.id, (err, document) => {
+//         if (!document) 
+//             return next(new Error('Unable to update.'));
+//         else {
+//             document.title = req.body.name;
+//             document.size = req.body.size;
+//         }
+//         document.save().then(document => {
+//             res.json('Update completed');
+//         }).catch(err => {
+//             res.status(400).send('Update failed');
+//         });
+//     });
+// });
+
 router.route('/documents/delete/:id').delete((req, res) => {
-    Document.findByIdAndDelete({_id: req.params.id}, (err, document) => {
+    Document.findByIdAndRemove({_id: req.params.id}, (err, document) => {
         if (err)
             res.json(err);
         else

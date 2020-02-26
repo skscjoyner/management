@@ -10,10 +10,13 @@ import { ListComponent } from './components/list/list.component';
 import { CreateComponent } from './components/create/create.component';
 import { DocumentService } from './document.service';
 import { UploadComponent } from './components/upload/upload.component';
+import { SearchComponent } from './search/search.component';
 
 const routes: Routes = [
   { path: 'create', component: CreateComponent },
-  { path: 'list', component: UploadComponent },
+  { path: 'list', component: ListComponent },
+  { path: 'upload', component: UploadComponent },
+  { path: 'search', component: SearchComponent },
   { path: '', redirectTo: 'list', pathMatch: 'full' }
 ];
 
@@ -22,7 +25,8 @@ const routes: Routes = [
     AppComponent,
     ListComponent,
     CreateComponent,
-    UploadComponent
+    UploadComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
